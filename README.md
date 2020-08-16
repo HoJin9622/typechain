@@ -102,3 +102,33 @@ export {};
 함수 실행 시 type과 다른 매개변수가 올 경우 컴파일이 되지 않는다.
 
 함수의 return type을 지정하려면 `const sayHi = (): string => {}` 처럼 type을 지정해줄 수 있다.
+
+## Interface
+
+```js
+interface Human {
+  name: string;
+  age: number;
+  gender: string;
+}
+
+const person = {
+  name: "hojin",
+  age: 22,
+  gender: "male",
+};
+
+const sayHi = (person: Human): string => {
+  return `Hello ${person.name}, you are ${person.age}, you are a ${person.gender}!`;
+};
+
+console.log(sayHi(person));
+
+export {};
+```
+
+interface는 object를 넘겨줄 때 사용된다.
+
+넘겨받을 object의 type을 interface에 지정하고
+
+매개변수 person의 type을 Human으로 지정하면 object를 매개변수로 넘겨줄 수 있게 된다.
