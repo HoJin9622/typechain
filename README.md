@@ -40,3 +40,23 @@ tsconfig.json 파일의 내용으로는 다음과 같이 입력한다.
 prestart에 tsc를 주어 start 되기전에 tsc를 실행한다.
 
 tsc는 ts파일을 컴파일 옵션에 따라서 컴파일을 실행한다.
+
+## 함수의 매개변수
+
+```ts
+const name = "Hojin",
+  age = 24,
+  gender = "male";
+
+const sayHi = (name, age, gender?) => {
+  console.log(`Hello ${name}, you are ${age}, you are a ${gender}`);
+};
+
+sayHi(name, age);
+```
+
+sayHi 함수의 gender 뒤에 ?를 붙이지 않으면 실행 시 에러가 발생된다.
+
+일반적인 js라면 Hello Hojin, you are 24, you are a undefined로 출력이 된다.
+
+여기서 gender 뒤에 ? 를 붙이게되면 gender라는 매개변수는 선택적이 될 수 있음을 의미한다.
