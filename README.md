@@ -105,7 +105,7 @@ export {};
 
 ## Interface
 
-```js
+```ts
 interface Human {
   name: string;
   age: number;
@@ -132,3 +132,36 @@ interface는 object를 넘겨줄 때 사용된다.
 넘겨받을 object의 type을 interface에 지정하고
 
 매개변수 person의 type을 Human으로 지정하면 object를 매개변수로 넘겨줄 수 있게 된다.
+
+## Class
+
+```ts
+class Human {
+  public name: string;
+  public age: number;
+  public gender: string;
+  constructor(name: string, age: number, gender: string) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+  }
+}
+
+const hojin = new Human("hojin", 24, "male");
+
+const sayHi = (person: Human): string => {
+  return `Hello ${person.name}, you are ${person.age}, you are a ${person.gender}!`;
+};
+
+console.log(sayHi(hojin));
+
+export {};
+```
+
+class <클래스명>으로 선언한다.
+
+public, private 속성으로 변수를 선언할 수 있고(자바스크립트에서는 불가)
+
+물론 변수의 type도 지정해줄 수 있다.
+
+new 키워드를 사용하여 생성하여 사용한다.
