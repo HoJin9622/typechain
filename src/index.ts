@@ -37,7 +37,7 @@ class Block {
   }
 }
 
-const genesisBlock: Block = new Block(0, "2020202022", "", "Hello", 123456);
+const genesisBlock: Block = new Block(0, "2020202020202", "", "Hello", 123456);
 
 let blockchain: Block[] = [genesisBlock];
 
@@ -77,7 +77,7 @@ const getHashforBlock = (aBlock: Block): string =>
   );
 
 const isBlockValid = (candidateBlock: Block, previousBlock: Block): boolean => {
-  if (Block.validateStructure(candidateBlock)) {
+  if (!Block.validateStructure(candidateBlock)) {
     return false;
   } else if (previousBlock.index + 1 !== candidateBlock.index) {
     return false;
